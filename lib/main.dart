@@ -35,7 +35,10 @@ class _BallState extends State<Ball> {
   Widget build(BuildContext context) {
     return FlatButton(
       onPressed: () {
-        print('I got clicked!');
+        int randNum = Random().nextInt(5) + 1;
+        setState(() {
+          ballNumber = randNum;
+        });
       },
       child: Image(
         image: AssetImage('images/ball$ballNumber.png'),
